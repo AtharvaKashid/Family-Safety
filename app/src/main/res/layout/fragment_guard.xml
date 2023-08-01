@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5e7e9"
+   >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:layout_margin="16sp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Security"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="16sp"
+        android:id="@+id/pink_card"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/grey_bg"
+        android:layout_margin="16sp"
+        app:cardCornerRadius="16sp"
+        android:layout_height="180sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        />
+
+    <TextView
+        android:id="@+id/text_sos"
+        android:elevation="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOS"
+        app:layout_constraintStart_toStartOf="@id/pink_card"
+        android:layout_margin="16sp"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="@id/pink_card"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:elevation="16sp"
+        android:layout_margin="16sp"
+        app:layout_constraintStart_toStartOf="@id/pink_card"
+        app:layout_constraintEnd_toStartOf="@id/sos_image"
+        android:id="@+id/sos_message"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/text_sos"
+        android:text="In case of emergency keep telling family members to contact me"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        />
+    <ImageView
+        android:id="@+id/sos_image"
+        app:layout_constraintTop_toTopOf="@id/pink_card"
+        android:layout_width="96sp"
+        app:layout_constraintBottom_toBottomOf="@id/pink_card"
+        android:layout_height="96sp"
+        app:layout_constraintEnd_toEndOf="@id/pink_card"
+        android:elevation="16sp"
+        android:src="@drawable/sos"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/green_card"
+        app:cardElevation="16sp"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="#63d2c8"
+        android:layout_margin="16sp"
+        app:cardCornerRadius="16sp"
+        android:layout_height="180sp"
+        app:layout_constraintTop_toBottomOf="@id/pink_card"
+        />
+
+    <TextView
+        android:id="@+id/text_guard"
+        android:elevation="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GUARD"
+        app:layout_constraintStart_toStartOf="@id/green_card"
+        android:layout_margin="16sp"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="@id/green_card"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:elevation="16sp"
+        android:layout_margin="16sp"
+        app:layout_constraintStart_toStartOf="@id/green_card"
+        app:layout_constraintEnd_toEndOf="@id/green_card"
+        android:id="@+id/guard_message"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/guard_image"
+        app:layout_constraintTop_toBottomOf="@id/text_guard"
+        android:text="In case of emergency keep telling family members to contact me"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:id="@+id/guard_image"
+        app:layout_constraintTop_toTopOf="@id/green_card"
+        android:layout_width="96sp"
+        app:layout_constraintBottom_toBottomOf="@id/green_card"
+        android:layout_height="96sp"
+        app:layout_constraintEnd_toEndOf="@id/green_card"
+        android:elevation="16sp"
+        android:src="@drawable/shield"
+        />
+
+    <EditText
+        android:id="@+id/invite_mail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Enter Email of whom you want to invite"
+        app:layout_constraintBottom_toBottomOf="@id/send_invite"
+        app:layout_constraintEnd_toStartOf="@id/send_invite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/send_invite" />
+
+    <Button
+        android:id="@+id/send_invite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Invite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/green_card" />
+
+    <TextView
+        android:id="@+id/your_invites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Your Invites : "
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/invite_mail" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/invite_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/your_invites"
+        tools:listitem="@layout/item_invite_mail" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
